@@ -24,7 +24,7 @@ The Python files *DepthMono.py* and *utilities.py* implement the necessary steps
 * *MatchingModel* loads the feature matching model (SuperGlue)
 * *DispModelPath* is the disparity estimation model path; we use CREStere model
 
-After getting disparity maps from the inputput video, the conversion to the depth map is trivial, using the calibration parameters. Next, microtopography surface analysis is applied to the depth maps using detrending approach where a plane is fitted to through the depth surfaces. The below shows an example. 
+After getting disparity maps from the input video, the conversion to the depth map is trivial, using the calibration parameters. Next, microtopography surface analysis is applied to the depth maps using detrending approach where a plane is fitted to through the depth surfaces. The below shows an example. 
 
 ![detrending](https://github.com/shahrokh1106/sediment-microtopography-monocamera/assets/44213732/6c06109c-d1ee-43bb-8b74-91b44dfd5339)
 
