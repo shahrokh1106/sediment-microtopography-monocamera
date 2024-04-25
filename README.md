@@ -17,17 +17,16 @@ Stereo vision typically involves two cameras positioned at slightly different an
 
 The Python files *DepthMono.py* and *utilities.py* implement the necessary steps to get depths from sequential frames. In *DepthMono.py*
 
-class DepthMono():
-    def __init__(self, OutPutSize = (640,480), PreProcessFlag = True, Debug=True, ShowScale=100, ROI=None, Save=True, SavePath = "images/"):
-
 * *OutPutSize* is the size of input images after distortion removal and preprocessing steps. If SuperGlue model is used for the feature matching,  *OutPutSize* must be (640,480)
-* * *PreProcessFlag* is a flag to set whether preprocessing is needed. If True, Zero-cross normalization followed by Adaptive Histogram Equalization will be applied to the input images.
+* *PreProcessFlag* is a flag to set whether preprocessing is needed. If True, Zero-cross normalization followed by Adaptive Histogram Equalization will be applied to the input images.
 * *DistCoef* is the distortion parameters estimated from the calibration part. The initial values in the code are related to the drop camera we used.
 * *CameraMatrix* is the camera matrix estimated from the calibration step
 * *MatchingModel* loads the feature matching model (SuperGlue)
 * *DispModelPath* is the disparity estimation model path; we use CREStere model
 
 After getting disparity maps from the inputput video, the conversion to the depth map is trivial, using the calibration parameters. Next, microtopography surface analysis is applied to the depth maps using detrending approach where a plane is fitted to through the depth surfaces. The below shows an example. 
+
+![detrending](https://github.com/shahrokh1106/sediment-microtopography-monocamera/assets/44213732/6c06109c-d1ee-43bb-8b74-91b44dfd5339)
 
 
 
