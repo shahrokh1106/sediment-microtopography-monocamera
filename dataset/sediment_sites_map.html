@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_87b34d2542fbb075f9a567481d10b628 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_87b34d2542fbb075f9a567481d10b628" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_87b34d2542fbb075f9a567481d10b628 = L.map(
+                "map_87b34d2542fbb075f9a567481d10b628",
+                {
+                    center: [-36.20286, 175.07008285],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8bbbb37ffe7311b8fd0a42d655b6d130 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8bbbb37ffe7311b8fd0a42d655b6d130.addTo(map_87b34d2542fbb075f9a567481d10b628);
+        
+    
+            var marker_ede9f4589f29144412b52a135b7131c5 = L.marker(
+                [-36.16922, 175.103999],
+                {
+}
+            ).addTo(map_87b34d2542fbb075f9a567481d10b628);
+        
+    
+            var icon_45bab35974cd8809aa177fe30a8ddd32 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2f62d47579991e668d943a57f4fa4acd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3b297485f5ac3795402b4ce81a277f0f = $(`<div id="html_3b297485f5ac3795402b4ce81a277f0f" style="width: 100.0%; height: 100.0%;">Location A (Sand)</div>`)[0];
+                popup_2f62d47579991e668d943a57f4fa4acd.setContent(html_3b297485f5ac3795402b4ce81a277f0f);
+            
+        
+
+        marker_ede9f4589f29144412b52a135b7131c5.bindPopup(popup_2f62d47579991e668d943a57f4fa4acd)
+        ;
+
+        
+    
+    
+                marker_ede9f4589f29144412b52a135b7131c5.setIcon(icon_45bab35974cd8809aa177fe30a8ddd32);
+            
+    
+            var marker_9287d9ca9aed5ea6534ece5739f697fe = L.marker(
+                [-36.2365, 175.0361667],
+                {
+}
+            ).addTo(map_87b34d2542fbb075f9a567481d10b628);
+        
+    
+            var icon_b3907c37700f064a66093b9f27abccbd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_29833ceca4fdd8ae26a64a3d4989311c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4336bfb673cd751bce39916c7db859d8 = $(`<div id="html_4336bfb673cd751bce39916c7db859d8" style="width: 100.0%; height: 100.0%;">Location B (Shell-Hash)</div>`)[0];
+                popup_29833ceca4fdd8ae26a64a3d4989311c.setContent(html_4336bfb673cd751bce39916c7db859d8);
+            
+        
+
+        marker_9287d9ca9aed5ea6534ece5739f697fe.bindPopup(popup_29833ceca4fdd8ae26a64a3d4989311c)
+        ;
+
+        
+    
+    
+                marker_9287d9ca9aed5ea6534ece5739f697fe.setIcon(icon_b3907c37700f064a66093b9f27abccbd);
+            
+    
+            var tile_layer_3afea5655836ec5ec0e7947995df071a = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_3afea5655836ec5ec0e7947995df071a.addTo(map_87b34d2542fbb075f9a567481d10b628);
+        
+    
+            var tile_layer_81566cf62625ed0f5b7d20a0fa11ed20 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_81566cf62625ed0f5b7d20a0fa11ed20.addTo(map_87b34d2542fbb075f9a567481d10b628);
+        
+    
+            var tile_layer_f2564437cbae7d54fad5aab6fbc8f3eb = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f2564437cbae7d54fad5aab6fbc8f3eb.addTo(map_87b34d2542fbb075f9a567481d10b628);
+        
+    
+            var layer_control_15571566714c60e49756c8ca7e3700e0_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_8bbbb37ffe7311b8fd0a42d655b6d130,
+                    "ESRI Light Gray Canvas" : tile_layer_3afea5655836ec5ec0e7947995df071a,
+                    "ESRI Satellite" : tile_layer_81566cf62625ed0f5b7d20a0fa11ed20,
+                },
+                overlays :  {
+                    "Labels \u0026 Boundaries" : tile_layer_f2564437cbae7d54fad5aab6fbc8f3eb,
+                },
+            };
+            let layer_control_15571566714c60e49756c8ca7e3700e0 = L.control.layers(
+                layer_control_15571566714c60e49756c8ca7e3700e0_layers.base_layers,
+                layer_control_15571566714c60e49756c8ca7e3700e0_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_87b34d2542fbb075f9a567481d10b628);
+
+        
+</script>
+</html>

@@ -1,5 +1,0 @@
-MegEngine>=1.9.1
-opencv-python>=3.4.0
-numpy>=1.18.1
-Pillow>=8.4.0
-tensorboardX>=2.1
