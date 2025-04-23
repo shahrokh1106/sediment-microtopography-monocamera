@@ -22,7 +22,8 @@ pip install -r requirements.txt
 Raft-Stereo needs Pytorch. Depending in the GPU capability of your system, you can install it from https://pytorch.org/get-started/locally/
 
 ### Run
-Run test.py to get the microtopography features from a pair of sequential frames as an example. The results will be saved in the "example" folder
-Run experiments.py to get the same results in the paper from two sediment types. The results will be saved in the "dataset" folder
+Run "test.py" to get the microtopography features from a pair of sequential frames as an example. The results will be saved in the "example" folder
+
+Run "experiments.py" to get the same results in the paper from two sediment types. The results will be saved in the "dataset" folder
 
 
