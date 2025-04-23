@@ -3,7 +3,7 @@ High-resolution characterization of seafloor sediment microtopography is essenti
 
 The pipeline comprises six main components: camera calibration, data acquisition, distortion removal, preprocessing, depth estimation, and microtopography feature extraction. 
 ![outline](figs/outline.png)
-![example](figs/example.png)
+![fig_depth_example](figs/fig_depth_example.png)
 
 The Python files *DepthMono.py* and *utilities.py* implement the necessary steps to get depths from sequential frames. In *DepthMono.py*
 
