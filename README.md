@@ -36,8 +36,8 @@ Run *experiments.py* to get the same results in the paper from two sediment type
 ## Citation 
 If you find this project useful, please consider citing:
 ```bash
-1. To be added soon...
-
+To be added soon...
+and
 @article{azhar2022rgb,
   title={An RGB-D framework for capturing soft-sediment microtopography},
   author={Azhar, Mihailo and Hillman, Jenny R and Gee, Trevor and Schenone, Stefano and van der Mark, Wannes and Thrush, Simon F and Delmas, Patrice},
