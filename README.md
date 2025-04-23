@@ -19,7 +19,7 @@ python -m venv sediment_env
 sediment_env\Scripts\activate
 pip install -r requirements.txt
 ```
-Raft-Stereo needs Pytorch. Depending in the GPU capability of your system, you can install it from https://pytorch.org/get-started/locally/
+Raft-Stereo needs Pytorch. Depending on the GPU capability of your system, you can install it from https://pytorch.org/get-started/locally/
 
 ### Run
 Run *test.py* to get the microtopography features from a pair of sequential frames as an example. The results will be saved in the "example" folder
