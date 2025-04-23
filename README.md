@@ -16,11 +16,6 @@ The figure shows depth estimation on the sediment data examples. (a) two sequent
   <img src="docs/2.gif" alt="GIF 2" width="45%" />
 </p>
 
-<p float="left">
-  <span style="display:inline-block; width:45%; text-align:center;">1</span>
-  <span style="display:inline-block; width:45%; text-align:center;">2</span>
-</p>
-
 ## Usage 
 ### Preparation 
 ```bash
