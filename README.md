@@ -12,6 +12,10 @@ The figure shows depth estimation on the sediment data examples. (a) two sequent
 
 # Usage 
 ## Preparation 
-
+```bash
+git clone https://github.com/shahrokh1106/sediment-microtopography-monocamera.git
+cd sediment-microtopography-monocamera
+pip install -r requirements.txt
+```
 
 
