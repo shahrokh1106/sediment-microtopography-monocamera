@@ -15,7 +15,10 @@ The figure shows depth estimation on the sediment data examples. (a) two sequent
 ```bash
 git clone https://github.com/shahrokh1106/sediment-microtopography-monocamera.git
 cd sediment-microtopography-monocamera
+python -m venv sediment_env
+sediment_env\Scripts\activate
 pip install -r requirements.txt
 ```
+Raft-Stereo needs Pytorch. Depending in the GPU capability of your system, you can install it from 
 
 

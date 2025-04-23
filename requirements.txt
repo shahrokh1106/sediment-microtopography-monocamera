@@ -10,6 +10,4 @@ Pillow==11.2.1
 scipy==1.11.4
 setuptools==68.2.2
 skimage
-torch==2.6.0+cu118
-torchvision==0.21.0+cu118
 tqdm==4.67.1
