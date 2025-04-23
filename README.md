@@ -10,8 +10,8 @@ The pipeline comprises six main components: camera calibration, data acquisition
 
 The figure shows depth estimation on the sediment data examples. (a) two sequential video frames as a pair of stereo images, (b) undistorted video frames, (c), selected regions of interest (d) preprocessed frames, (e) feature matching, (f) stereo rectification results, (g) the first/left frame and the corresponding depth map computed using RAFT-Stereo. We also provide 3D meshes constructed from the depth map in (h)-(j) for visualization purposes
 
-# Usage 
-## Preparation 
+## Usage 
+### Preparation 
 ```bash
 git clone https://github.com/shahrokh1106/sediment-microtopography-monocamera.git
 cd sediment-microtopography-monocamera
@@ -19,6 +19,7 @@ python -m venv sediment_env
 sediment_env\Scripts\activate
 pip install -r requirements.txt
 ```
-Raft-Stereo needs Pytorch. Depending in the GPU capability of your system, you can install it from 
+Raft-Stereo needs Pytorch. Depending in the GPU capability of your system, you can install it from https://pytorch.org/get-started/locally/
+
 
 
