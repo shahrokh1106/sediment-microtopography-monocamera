@@ -10,7 +10,8 @@ The pipeline comprises six main components: camera calibration, data acquisition
 
 The figure shows depth estimation on the sediment data examples. (a) two sequential video frames as a pair of stereo images, (b) undistorted video frames, (c), selected regions of interest (d) preprocessed frames, (e) feature matching, (f) stereo rectification results, (g) the first/left frame and the corresponding depth map computed using RAFT-Stereo. We also provide 3D meshes constructed from the depth map in (h)-(j) for visualization purposes
 
-## Usage 
+# Usage 
+# Preparation 
 
 
 
