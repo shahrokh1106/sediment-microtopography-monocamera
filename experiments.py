@@ -155,6 +155,36 @@ def split_mesh_along_x_with_gap(mesh, gap=20.0):
     right_mesh = extract_half(right_indices, shift=gap / 2)
     return left_mesh, right_mesh
 
+def compute_overlap_area(DepthPipeline,img1, img2):
+        img1 = DepthPipeline.PreProcessImage(img1)
+        img2 = DepthPipeline.PreProcessImage(img2)
+        gray1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
+        gray2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
+        orb = cv2.ORB_create(5000)
+        kp1, des1 = orb.detectAndCompute(gray1, None)
+        kp2, des2 = orb.detectAndCompute(gray2, None)
+        bf = cv2.BFMatcher(cv2.NORM_HAMMING)
+        matches = bf.match(des1, des2)
+        matches = sorted(matches, key=lambda x: x.distance)
+        if len(matches) < 10:
+            return 0.0  # Not enough matches
+        src_pts = np.float32([kp1[m.queryIdx].pt for m in matches]).reshape(-1,1,2)
+        dst_pts = np.float32([kp2[m.trainIdx].pt for m in matches]).reshape(-1,1,2)
+        H, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, 5.0)
+        if H is None:
+            return 0.0
+        h, w = img1.shape[:2]
+        warped_img1 = cv2.warpPerspective(img1, H, (w, h))
+
+        mask1 = cv2.cvtColor(warped_img1, cv2.COLOR_BGR2GRAY) > 0
+        mask2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY) > 0
+        # Compute overlap
+        intersection = np.logical_and(mask1, mask2)
+        union = np.logical_or(mask1, mask2)
+
+        overlap_percent = (np.sum(intersection) / np.sum(union)) * 100
+        return overlap_percent
+
 def DoExperimentAll(experiment,experiment_index, show3d = False):
     ratio_crop = 0.7
     DepthPipeline = DepthMono(RaftModelPath = os.path.join("raft_models", "raftstereo-eth3d.pth"),
@@ -307,40 +337,7 @@ def DoExperimentAll(experiment,experiment_index, show3d = False):
     plt.savefig(os.path.join("dataset", f"psd_radial_{experiment_index}.png"))
 
 
-from numpy.linalg import norm
-from scipy.stats import spearmanr
 def DoBaselineExperiment():
-    def compute_overlap_area(img1, img2):
-        img1 = DepthPipeline.PreProcessImage(img1)
-        img2 = DepthPipeline.PreProcessImage(img2)
-        gray1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
-        gray2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
-        orb = cv2.ORB_create(5000)
-        kp1, des1 = orb.detectAndCompute(gray1, None)
-        kp2, des2 = orb.detectAndCompute(gray2, None)
-        bf = cv2.BFMatcher(cv2.NORM_HAMMING)
-        matches = bf.match(des1, des2)
-        matches = sorted(matches, key=lambda x: x.distance)
-        if len(matches) < 10:
-            return 0.0  # Not enough matches
-        src_pts = np.float32([kp1[m.queryIdx].pt for m in matches]).reshape(-1,1,2)
-        dst_pts = np.float32([kp2[m.trainIdx].pt for m in matches]).reshape(-1,1,2)
-        H, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, 5.0)
-        if H is None:
-            return 0.0
-        h, w = img1.shape[:2]
-        warped_img1 = cv2.warpPerspective(img1, H, (w, h))
-
-        mask1 = cv2.cvtColor(warped_img1, cv2.COLOR_BGR2GRAY) > 0
-        mask2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY) > 0
-        # Compute overlap
-        intersection = np.logical_and(mask1, mask2)
-        union = np.logical_or(mask1, mask2)
-
-        overlap_percent = (np.sum(intersection) / np.sum(union)) * 100
-        return overlap_percent
-
-
     DepthPipeline = DepthMono(RaftModelPath = os.path.join("raft_models", "raftstereo-eth3d.pth"),
                             OutPutSize = (640,480),
                             PreProcessFlag=True,
@@ -373,7 +370,6 @@ def DoBaselineExperiment():
     shell2_l,shell2_d = DepthPipeline.GetDispMap(rleft, rright)
     shell2_features,shell2_detrened = DepthPipeline.GetSurfaceStats(shell2_d)
     DepthPipeline.ROI = None
-    print("Percentage of Overlap", compute_overlap_area(shell1_l,shell2_l))
     all_features = ["Sa", "Sq", "Mp", "sigma_p", "Mt", "sigma_t",
                 "skew", "kurtosis", "sk", "spk", "svk", 
                 "ratio_spk_sk", "ratio_svk_sk"]
