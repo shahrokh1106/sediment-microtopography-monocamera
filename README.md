@@ -38,3 +38,8 @@ Run *test.py* to get the microtopography features from a pair of sequential fram
 Run *experiments.py* to get the same results in the paper from two sediment types. The results will be saved in the "dataset" folder
 
 
+## Citation 
+If you find this project useful, please consider citing:
+```bash
+To be added soon...
+```
