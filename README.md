@@ -8,18 +8,9 @@ The pipeline comprises six main components: camera calibration, data acquisition
 ![outline](docs/outline.png)
 ![fig_depth_example](docs/fig_depth_example.png)
 
-The Python files *DepthMono.py* and *utilities.py* implement the necessary steps to get depths from sequential frames. In *DepthMono.py*
+The figure shows depth estimation on the sediment data examples. (a) two sequential video frames as a pair of stereo images, (b) undistorted video frames, (c), selected regions of interest (d) preprocessed frames, (e) feature matching, (f) stereo rectification results, (g) the first/left frame and the corresponding depth map computed using RAFT-Stereo. We also provide 3D meshes constructed from the depth map in (h)-(j) for visualization purposes
 
-* *OutPutSize* is the size of input images after distortion removal and preprocessing steps. If SuperGlue model is used for the feature matching,  *OutPutSize* must be (640,480)
-* *PreProcessFlag* is a flag to set whether preprocessing is needed. If True, Zero-cross normalization followed by Adaptive Histogram Equalization will be applied to the input images.
-* *DistCoef* is the distortion parameters estimated from the calibration part. The initial values in the code are related to the drop camera we used.
-* *CameraMatrix* is the camera matrix estimated from the calibration step
-* *MatchingModel* loads the feature matching model (SuperGlue)
-* *DispModelPath* is the disparity estimation model path; we use CREStere model
-
-After getting disparity maps from the input video, the conversion to the depth map is trivial, using the calibration parameters. Next, microtopography surface analysis is applied to the depth maps using detrending approach where a plane is fitted to through the depth surfaces. The below shows an example. 
-
-![detrending](https://github.com/shahrokh1106/sediment-microtopography-monocamera/assets/44213732/6c06109c-d1ee-43bb-8b74-91b44dfd5339)
+## Usage 
 
 
 
